@@ -211,6 +211,146 @@ function drawScatterChart() {
   chart.draw(data, options);
 }
 </script>
+
+  <!-- H3 SECTION 3.2: BAR CHART -->
+
+<h4>Bar Chart: UK City Populations in 2023</h4>
+
+<div id="bar_chart"
+     style="width:800px;height:550px;">
+</div>
+
+<script>
+google.charts.setOnLoadCallback(drawBarChart);
+
+function drawBarChart() {
+
+  var data = google.visualization.arrayToDataTable([
+    ['City', 'Population'],
+    ['London', 9648000],
+    ['Birmingham', 1153900],
+    ['Edinburgh', 554000]
+  ]);
+
+  var options = {
+    title: 'Population of UK Cities in 2023',
+    hAxis: {
+      title: 'Population'
+    },
+    vAxis: {
+      title: 'City'
+    },
+    colors: ['#3366CC'],
+    width: 800,
+    height: 550
+  };
+
+  var chart = new google.visualization.BarChart(
+    document.getElementById('bar_chart')
+  );
+
+  chart.draw(data, options);
+}
+</script>
+
+  <!-- H3 SECTION 3.2: LINE CHART -->
+
+<h4>Line Chart: UK City Population Trends</h4>
+
+<div id="line_chart"
+     style="width:800px;height:550px;">
+</div>
+
+<script>
+google.charts.setOnLoadCallback(drawLineChart);
+
+function drawLineChart() {
+
+  var data = google.visualization.arrayToDataTable([
+    ['Year', 'London', 'Birmingham', 'Edinburgh'],
+    ['2013', 8414000, 1092200, 495000],
+    ['2015', 8661000, 1113000, 507000],
+    ['2017', 8916000, 1137100, 519000],
+    ['2019', 9177000, 1141800, 531000],
+    ['2021', 9426000, 1142500, 543000],
+    ['2023', 9648000, 1153900, 554000]
+  ]);
+
+  var options = {
+    title: 'UK City Population Trends (2013–2023)',
+    hAxis: {
+      title: 'Year'
+    },
+    vAxis: {
+      title: 'Population'
+    },
+    legend: {
+      position: 'bottom'
+    },
+    width: 800,
+    height: 550
+  };
+
+  var chart = new google.visualization.LineChart(
+    document.getElementById('line_chart')
+  );
+
+  chart.draw(data, options);
+}
+</script>
+
+  <!-- H3 SECTION 3.2: COLUMN CHART -->
+
+<h4>Column Chart: Monthly Sales in 2023</h4>
+
+<div id="column_chart"
+     style="width:800px;height:550px;">
+</div>
+
+<script>
+google.charts.setOnLoadCallback(drawColumnChart);
+
+function drawColumnChart() {
+
+  var data = google.visualization.arrayToDataTable([
+    ['Month', 'Sales (GBP)', { role: 'style' }],
+    ['Jan', 1200, '#3366CC'],
+    ['Feb', 1500, '#DC3912'],
+    ['Mar', 1800, '#FF9900'],
+    ['Apr', 1600, '#109618'],
+    ['May', 2100, '#990099'],
+    ['Jun', 2400, '#0099C6'],
+    ['Jul', 2200, '#DD4477'],
+    ['Aug', 2600, '#66AA00'],
+    ['Sep', 2300, '#B82E2E'],
+    ['Oct', 2800, '#316395'],
+    ['Nov', 3200, '#994499'],
+    ['Dec', 3800, '#22AA99']
+  ]);
+
+  var options = {
+    title: 'Monthly Sales in 2023',
+    hAxis: {
+      title: 'Month'
+    },
+    vAxis: {
+      title: 'Sales (in GBP)',
+      minValue: 0
+    },
+    legend: {
+      position: 'none'
+    },
+    width: 800,
+    height: 550
+  };
+
+  var chart = new google.visualization.ColumnChart(
+    document.getElementById('column_chart')
+  );
+
+  chart.draw(data, options);
+}
+</script>
   
   <hr>
 

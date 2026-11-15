@@ -1,86 +1,108 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<html> 
-  <head>
-    <head>
-    <img src="WebBanner.png" alt="Banner" width="1200" height="300">
-    <h1><b>ENG0018 Computer Laboratory 2026/27</b></h1>
-    <h2>Student URN: 7006609</h2>
-  <hr>
-  <h2 style='font-family:calibri;"><b>Conference Paper: Mathematical Modelling of Algorithmic Trading and Financial Market Instability</b></h2>
-  <hr>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!style for tables>
-    <style>
-      table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 30%;
+<title>Mathematical Modelling of Algorithmic Trading and Financial Market Instability</title>
 
-  }
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-  td,th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
+<!-- H2: CSS styling -->
+<style>
+table {
+  font-family: Arial, sans-serif;
+  border-collapse: collapse;
+  width: 30%;
+}
 
-  tr:nth-child(even) {
-    background-colour: #dddddd
-  }
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
 
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
 
+p.ex1 {
+  margin-left: 250px;
+}
 
+.mySlides {
+  display: none;
+}
+</style>
+<!-- H3: Google Charts Library -->
+  <script src="https://www.gtatic.com/charts/loader.js"></script>
+</head>
 
-    </style>
+<body style="background-color:#FFFFFF;margin-left:50px;">
 
-    <style>
-    p.ex1 {
-    margin-left: 250px;
-    }
-    </style>
-    </head>
+<!-- UNIVERSITY BANNER AND TITLE -->
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <style>
-    .mySlides {display:none;}
-    </style>
-    <body style="bachground-color:#FFFFF;margin-left:50px;">
-    <hr>
-    <h3 id="Abstract">Abstract</h3>
-    <p class="ex1">
-    <pre>
-    [HFT ABSTRACT - WRITE LATER]
+<img src="WebBanner.png" alt="Banner" width="1200" height="300">
 
-    Include;
-    - The purpose of your HFT investigation
-    - Your research question
-    - Your main findings
-    - Your conclusion
-    </pre>
-    </p>
+<h1><b>ENG0018 Computer Laboratory 2026/27</b></h1>
 
-    <hr>
+<h2>Student URN: 7006609</h2>
 
-<!-- INTRODUCTION - STEP 18 -->
+<hr>
+
+<h2 style="font-family:Calibri,Arial,sans-serif;">
+<b>Conference Paper: Mathematical Modelling of Algorithmic Trading and Financial Market Instability</b>
+</h2>
+
+<hr>
+
+<!-- H2: TABLE OF CONTENTS -->
+
+<h3>Table of Contents</h3>
+
+<table>
+<tr>
+  <td><a href="#Abstract">Abstract</a></td>
+</tr>
+<tr>
+  <td><a href="#Introduction">Introduction</a></td>
+</tr>
+<tr>
+  <td><a href="#Analysis-and-discussion">Analysis and discussion</a></td>
+</tr>
+<tr>
+  <td><a href="#References">References</a></td>
+</tr>
+</table>
+
+<hr>
+
+<!-- H2: ABSTRACT -->
+
+<h3 id="Abstract">Abstract</h3>
+
+<p class="ex1">
+[HFT ABSTRACT - WRITE LATER]
+</p>
+
+<!-- ADD RESEARCH AIM, QUESTION, FINDINGS AND CONCLUSION LATER -->
+
+<hr>
+
+<!-- H2: INTRODUCTION -->
 
 <h3 id="Introduction">Introduction</h3>
 
 <p class="ex1">
 [ADD YOUR HFT INTRODUCTION HERE LATER]
-
-Include:
-- Definition of high-frequency trading
-- How HFT works
-- Trading algorithms
-- Importance of trading speed
-- Background to your research question
 </p>
+
+<!-- DEFINITION OF HFT, ALGORITHMS, TRADING SPEED AND RESEARCH QUESTION -->
 
 <hr>
 
-<!-- ANALYSIS AND DISCUSSION - STEP 19 -->
+<!-- H2: ANALYSIS AND DISCUSSION -->
 
 <h3 id="Analysis-and-discussion">
 Analysis and discussion
@@ -114,28 +136,57 @@ Analysis and discussion
 [ADD RESEARCH HERE]
 </p>
 
-<!-- SPACE FOR HFT GRAPHS -->
+<!-- SPACE FOR H3 GRAPHS -->
 
 <h4>HFT Graphs</h4>
 
-<p>
-[ADD YOUR HFT GRAPHS HERE IN LAB H3]
-</p>
+<div id="chart_div"
+  style="width:800px;height:450px;">
+</div>
+  
+<script>
+google.charts.load('current', {
+  packages: ['corechart']
+});
 
-<!-- MATHEMATICAL EQUATION - STEPS 20-21 -->
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+  var data = google.visualization.arrayToDataTable([
+    ['Task', 'Hours per Day'],
+    ['Work', 8],
+    ['Sleep', 8],
+    ['Eat', 2],
+    ['Study', 4],
+    ['Exercise', 2]
+  ]);
+
+  var options = {
+    title: 'My Daily Activities'
+  };
+
+  var chart = new google.visualization.PieChart(
+    document.getElementById('chart_div')
+  );
+
+  chart.draw(data, options);
+}
+</script>
+<!-- H2: MATHEMATICAL EQUATION -->
 
 <h4>Mathematical Analysis</h4>
 
 <p>Example trading profit equation:</p>
 
 <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow>
+  <mrow>
     <mi>Profit</mi>
     <mo>=</mo>
     <mi>Revenue</mi>
     <mo>-</mo>
     <mi>Costs</mi>
-</mrow>
+  </mrow>
 </math>
 
 <!-- SPACE FOR MORE EQUATIONS -->
@@ -146,40 +197,40 @@ Analysis and discussion
 
 <hr>
 
-<!-- HFT DATA TABLE - STEP 24 -->
+<!-- H2: DATA TABLE -->
 
 <h4>Table 1: High-Frequency Trading Data</h4>
 
 <table>
 <tr>
-    <th>HFT Metric</th>
-    <th>Value</th>
+  <th>HFT Metric</th>
+  <th>Value</th>
 </tr>
 
 <tr>
-    <td>Trading latency</td>
-    <td>Data to be added</td>
+  <td>Trading latency</td>
+  <td>Data to be added</td>
 </tr>
 
 <tr>
-    <td>Trading volume</td>
-    <td>Data to be added</td>
+  <td>Trading volume</td>
+  <td>Data to be added</td>
 </tr>
 
 <tr>
-    <td>Bid-ask spread</td>
-    <td>Data to be added</td>
+  <td>Bid-ask spread</td>
+  <td>Data to be added</td>
 </tr>
 
 <tr>
-    <td>Transaction costs</td>
-    <td>Data to be added</td>
+  <td>Transaction costs</td>
+  <td>Data to be added</td>
 </tr>
 </table>
 
 <hr>
 
-<!-- EXTERNAL HYPERLINK - STEP 25 -->
+<!-- H2: EXTERNAL LINK -->
 
 <h4>Further Reading</h4>
 
@@ -191,23 +242,42 @@ Financial Conduct Authority
 
 <hr>
 
-<!-- REFERENCES - STEP 27 -->
+<!-- H2: REFERENCES -->
 
 <h3 id="References">References</h3>
 
-<p>
-[REFERENCE 1 - ADD LATER]
-</p>
+<p>[REFERENCE 1 - ADD LATER]</p>
 
-<p>
-[REFERENCE 2 - ADD LATER]
-</p>
+<p>[REFERENCE 2 - ADD LATER]</p>
 
-<p>
-[REFERENCE 3 - ADD LATER]
-</p>
+<p>[REFERENCE 3 - ADD LATER]</p>
 
-<!-- ADD MORE HFT REFERENCES HERE -->
+<hr>
+
+<!-- H3 SECTION 3.1: JAVASCRIPT BUTTON -->
+
+<h3>JavaScript Practice</h3>
+
+<button id="colorButton">
+Click me to change colour
+</button>
+
+<script>
+var button = document.getElementById("colorButton");
+
+function changeColor() {
+  var randomColor = "#" +
+    Math.floor(Math.random() * 16777215)
+    .toString(16).padStart(6, "0");
+
+  button.style.backgroundColor = randomColor;
+}
+
+button.addEventListener("click", changeColor);
+</script>
+
+<!-- H3 SECTION 3.2: GOOGLE CHARTS WILL GO HERE LATER -->
 
 </body>
 </html>
+  

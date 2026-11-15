@@ -453,5 +453,65 @@ function drawColumnChart() {
     button.addEventListener("click", changeColor);
   </script>
 
+<!-- H3 SECTION 3.3: LAST MODIFIED TIME -->
+
+<hr>
+
+<h3>Last Modified Time</h3>
+
+<p id="last-updated">
+  Loading last update time...
+</p>
+
+<button id="verify-button"
+        onclick="getLastUpdatedTime()">
+  Verify Last Modified Time
+</button>
+
+<script>
+async function getLastUpdatedTime() {
+
+  const username = "FEPSFY7006609";
+  const repo = "YOUR_REPOSITORY_NAME";
+
+  const url =
+    `https://api.github.com/repos/${username}/${repo}/commits?path=index.html&per_page=1`;
+
+  const display = document.getElementById("last-updated");
+
+  display.innerText = "Checking GitHub...";
+
+  try {
+
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error("GitHub request failed");
+    }
+
+    const commits = await response.json();
+
+    if (commits.length === 0) {
+      throw new Error("No commits found for index.html");
+    }
+
+    const lastModified =
+      new Date(commits[0].commit.committer.date);
+
+    display.innerText =
+      "Last Modified Time: " +
+      lastModified.toLocaleString();
+
+  } catch (error) {
+
+    display.innerText =
+      "Unable to fetch last modified time. Check your GitHub details.";
+
+  }
+}
+
+window.addEventListener("load", getLastUpdatedTime);
+</script>
+  
 </body>
 </html>

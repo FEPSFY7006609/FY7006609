@@ -171,6 +171,47 @@
     }
   </script>
 
+  <!-- H3: SCATTER CHART -->
+
+<h4>Scatter Chart: Age vs. Salary</h4>
+
+<div id="scatter_chart"
+     style="width:800px;height:550px;">
+</div>
+
+<script>
+google.charts.setOnLoadCallback(drawScatterChart);
+
+function drawScatterChart() {
+
+  var data = new google.visualization.DataTable();
+
+  data.addColumn('number', 'Age');
+  data.addColumn('number', 'Salary');
+
+  data.addRows([
+    [25, 40000],
+    [30, 50000],
+    [35, 60000],
+    [40, 75000],
+    [45, 80000],
+    [50, 90000]
+  ]);
+
+  var options = {
+    title: 'Age vs. Salary',
+    hAxis: { title: 'Age' },
+    vAxis: { title: 'Salary' }
+  };
+
+  var chart = new google.visualization.ScatterChart(
+    document.getElementById('scatter_chart')
+  );
+
+  chart.draw(data, options);
+}
+</script>
+  
   <hr>
 
   <!-- MATHEMATICAL EQUATION -->

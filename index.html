@@ -97,7 +97,7 @@
 
   <h3 id="Introduction">Introduction</h3>
 
-  <p class="ex1">
+  <p class="ex1" id="Introduction">Introduction</h3>
     [ADD YOUR HFT INTRODUCTION HERE LATER]
   </p>
 
@@ -109,7 +109,9 @@
     Analysis and discussion
   </h3>
 
-  <p>
+  <div id="analysis_InText">
+  
+    <p>
     [ADD YOUR HFT ANALYSIS HERE LATER]
   </p>
 
@@ -129,6 +131,8 @@
 
   <p>[ADD RESEARCH HERE]</p>
 
+</div>
+  
   <hr>
 
   <!-- H3 SECTION 3.2: GOOGLE CHARTS -->
@@ -472,7 +476,7 @@ function drawColumnChart() {
 async function getLastUpdatedTime() {
 
   const username = "FEPSFY7006609";
-  const repo = "YOUR_REPOSITORY_NAME";
+  const repo = "FY7006609";
 
   const url =
     `https://api.github.com/repos/${username}/${repo}/commits?path=index.html&per_page=1`;
@@ -511,6 +515,52 @@ async function getLastUpdatedTime() {
 }
 
 window.addEventListener("load", getLastUpdatedTime);
+</script>
+
+  <!-- H3 SECTION 3.4: AUTOMATIC WORD COUNT -->
+
+<hr>
+
+<h3>Word Count</h3>
+
+<p id="totalWordCount"></p>
+
+<script>
+function displayWordCount() {
+
+  function countWords(elementId) {
+
+    var element = document.getElementById(elementId);
+
+    if (!element) {
+      return 0;
+    }
+
+    var text = element.innerText.trim();
+
+    if (text === "") {
+      return 0;
+    }
+
+    var words = text.split(/\s+/);
+
+    return words.length;
+  }
+
+  var introductionCount =
+    countWords("Introduction_InText");
+
+  var analysisCount =
+    countWords("Analysis_InText");
+
+  var totalWordCount =
+    introductionCount + analysisCount;
+
+  document.getElementById("totalWordCount").innerText =
+    "Total Word Count: " + totalWordCount;
+}
+
+window.addEventListener("load", displayWordCount);
 </script>
   
 </body>
